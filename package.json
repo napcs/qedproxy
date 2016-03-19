@@ -1,6 +1,6 @@
 {
   "name": "qedproxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Serve static pages, JSON, or proxy requests to another endpoint. Makes front-end development simpler.",
   "main": "app.js",
   "bin": {
@@ -12,9 +12,9 @@
   "author": "Brian P. Hogan",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/napcs/qedproxy.git"
-    },
+    "type": "git",
+    "url": "https://github.com/napcs/qedproxy.git"
+  },
   "dependencies": {
     "connect": "^3.4.1",
     "connect-logger": "0.0.1",
