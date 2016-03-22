@@ -93,5 +93,15 @@ describe("serves stuff", function() {
 
   });
 
+  it("has configurable port", function(done){
+    server = qed.start("public", "", "9999");
+    request('http://localhost:9999/help', function(error, response, body){
+      should.not.exist(error);
+      response.statusCode.should.equal(200);
+      server.close();
+      done();
+    });
+
+  });
 
 });
