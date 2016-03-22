@@ -21,10 +21,10 @@ QEDProxy to the rescue.
 Put your app in the `public` folder.
 
 Then run `qedproxy` and pass it the public folder where your pages are, and the root of the
-remote URL's endpoint. 
+remote URL's endpoint, like this: 
 
 ```
-$ qedproxy public http://api.open-notify.org
+$ qedproxy public --api http://api.open-notify.org
 ```
 
 A server starts on port  `4242`.
@@ -35,6 +35,20 @@ A server starts on port  `4242`.
 
 A request to `/api` on your local server maps to `/` on the remote server, which should work in most cases.
 
+### Additional options
+
+Need to change the port?
+
+```
+$ qedproxy public --api http://api.open-notify.org --port 9999
+```
+
+You can use `-a` and `-p` if those extra keystrokes bug you. Both are optional, too. If you don't specify an endpoint,
+then this'll just be a static webserver.
+
+`-v` will show you the current version and exit.
+
+
 ## CORS
 
 CORS headers are set up to be wide-open. So you don't have to use this as a static server if you don't want to. Fire this up on
@@ -43,7 +57,7 @@ some port and hit it from wherever. Should work great.
 
 ## Install
 
-QEDproxy has a binary.
+QEDproxy can be used as a global CLI program:
 
 ```
 $ npm install -g qedproxy
@@ -74,7 +88,9 @@ Fork, write a **single feature** or **single bugfix** with passing tests. Make a
 
 New features without justification will be closed automatically. 
 
-License: MIT
+## License
+
+MIT
 
 See `LICENSE` for details.
 
