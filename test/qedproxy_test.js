@@ -61,7 +61,6 @@ describe("serves stuff", function() {
     server = qed.start("public", "http://api.open-notify.org");
     request('http://localhost:4242/api/astros.json', function(error, response, body){
       should.not.exist(error);
-      console.log(response.headers['access-control-allow-origin']);
       response.headers["access-control-allow-origin"].should.equal("*");
       response.statusCode.should.equal(200);
 
@@ -74,7 +73,6 @@ describe("serves stuff", function() {
     server = qed.start(".", "http://api.open-notify.org");
     request('http://localhost:4242/', function(error, response, body){
       should.not.exist(error);
-      console.log(response.headers['access-control-allow-origin']);
       response.headers["access-control-allow-origin"].should.equal("*");
       response.statusCode.should.equal(200);
       body.should.containEql("package.json");
@@ -82,4 +80,18 @@ describe("serves stuff", function() {
       done();
     });
   });
+
+  it("serves the help page", function(done){
+    server = qed.start(".", "http://api.open-notify.org");
+    request('http://localhost:4242/help', function(error, response, body){
+      should.not.exist(error);
+      response.statusCode.should.equal(200);
+      body.should.containEql("<h1>qedproxy");
+      server.close();
+      done();
+    });
+
+  });
+
+
 });

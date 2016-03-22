@@ -29,6 +29,7 @@ $ qedproxy public http://api.open-notify.org
 
 A server starts on port  `4242`.
 
+* Visit <http://localhost:4242/help> to see some help info.
 * Visit <http://localhost:4242> to see your pages.
 * Visit <http://localhost:4242/api/astros.json> to see the result of the proxied request.
 

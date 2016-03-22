@@ -1,0 +1,19 @@
+html
+  head
+    title qedproxy v!{expose.version}
+  body
+    h1 qedproxy v!{expose.version}
+    hr
+
+    h2 Static files
+    p Place your files in the !{expose.path} folder.
+    p Then visit <a href="http://localhost:!{expose.port}/">http://localhost:!{expose.port}/</a> to view your page.
+
+    h2 API
+    if expose.api
+      p You are proxying requests to !{expose.api}.
+      p Visit <a href="http://localhost:!{expose.port}/api/">http://localhost:!{expose.port}/api/</a> to view the endpoint. Prefix all endpoint requests with /api/
+
+    else
+      p No api proxying configured.
+
