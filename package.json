@@ -1,6 +1,6 @@
 {
   "name": "qedproxy",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Serve static pages, JSON, or proxy requests to another endpoint. Makes front-end development simpler.",
   "main": "app.js",
   "bin": {
