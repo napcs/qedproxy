@@ -21,8 +21,7 @@ describe("serves stuff", function() {
         should.not.exist(error);
         response.statusCode.should.equal(200);
         body.should.equal(body);
-        server.close();
-        done();
+        server.close(done);
       });
     });
 
@@ -37,8 +36,7 @@ describe("serves stuff", function() {
       response.statusCode.should.equal(200);
       fileContents.should.equal(body);
 
-      server.close();
-      done();
+      server.close(done);
     });
   });
 
@@ -51,8 +49,7 @@ describe("serves stuff", function() {
       response.statusCode.should.equal(200);
       fileContents.should.equal(body);
 
-      server.close();
-      done();
+      server.close(done);
     });
   });
 
@@ -64,8 +61,7 @@ describe("serves stuff", function() {
       response.headers["access-control-allow-origin"].should.equal("*");
       response.statusCode.should.equal(200);
 
-      server.close();
-      done();
+      server.close(done);
     });
   });
 
@@ -76,8 +72,7 @@ describe("serves stuff", function() {
       response.headers["access-control-allow-origin"].should.equal("*");
       response.statusCode.should.equal(200);
       body.should.containEql("package.json");
-      server.close();
-      done();
+      server.close(done);
     });
   });
 
@@ -87,8 +82,7 @@ describe("serves stuff", function() {
       should.not.exist(error);
       response.statusCode.should.equal(200);
       body.should.containEql("<h1>qedproxy");
-      server.close();
-      done();
+      server.close(done);
     });
 
   });
@@ -98,8 +92,7 @@ describe("serves stuff", function() {
     request('http://localhost:9999/help', function(error, response, body){
       should.not.exist(error);
       response.statusCode.should.equal(200);
-      server.close();
-      done();
+      server.close(done);
     });
 
   });

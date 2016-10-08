@@ -24,7 +24,7 @@ Then run `qedproxy` and pass it the public folder where your pages are, and the 
 remote URL's endpoint, like this: 
 
 ```
-$ qedproxy public --api http://api.open-notify.org
+$ qedproxy --static public --api http://api.open-notify.org
 ```
 
 A server starts on port  `4242`.
@@ -40,11 +40,11 @@ A request to `/api` on your local server maps to `/` on the remote server, which
 Need to change the port?
 
 ```
-$ qedproxy public --api http://api.open-notify.org --port 9999
+$ qedproxy --static public --api http://api.open-notify.org --port 9999
 ```
 
-You can use `-a` and `-p` if those extra keystrokes bug you. Both are optional, too. If you don't specify an endpoint,
-then this'll just be a static webserver.
+You can use `-s`, `-a` and `-p` if those extra keystrokes bug you. They are optional, too. If you don't specify an endpoint,
+then this'll just be a static webserver. If you don't specify a `static` folder, it'll use `public/`. And the port defaults to `4242`.
 
 `-v` will show you the current version and exit.
 
